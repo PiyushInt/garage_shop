@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign In Page</title>
+    <script src="auth.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+      }
+
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        background-color: #f9f9f9;
+      }
+
+      .container {
+        background: white;
+        width: 100%;
+        max-width: 400px;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+
+      h1 {
+        font-size: 24px;
+        margin-bottom: 20px;
+      }
+
+      .btn {
+        display: block;
+        width: 100%;
+        padding: 12px;
+        margin: 10px 0;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+
+      .btn-google {
+        background-color: #4285f4;
+        color: white;
+      }
+
+      .btn-github {
+        background-color: #24292e;
+        color: white;
+      }
+
+      .divider {
+        margin: 20px 0;
+        position: relative;
+        text-align: center;
+      }
+
+      .divider::before,
+      .divider::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        width: 40%;
+        height: 1px;
+        background: #ccc;
+      }
+
+      .divider::before {
+        left: 0;
+      }
+
+      .divider::after {
+        right: 0;
+      }
+
+      .divider span {
+        background: white;
+        padding: 0 10px;
+        color: #666;
+      }
+
+      .email-input {
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 12px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+      }
+
+      .continue-btn {
+        background-color: #333;
+        color: white;
+      }
+
+      .signup-text {
+        margin-top: 20px;
+        font-size: 14px;
+        color: #666;
+      }
+
+      .signup-text a {
+        color: #4285f4;
+        text-decoration: none;
+      }
+
+      .terms {
+        margin-top: 10px;
+        font-size: 12px;
+        color: #999;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Sign in to Streamlit Community Cloud</h1>
+
+      <button class="btn btn-google">&#x1F4BB; Continue with Google</button>
+      <button class="btn btn-github">&#x1F5A5; Continue with GitHub</button>
+
+      <div class="divider"><span>OR</span></div>
+
+      <input
+        type="email"
+        class="email-input"
+        placeholder="Your email address"
+      />
+      <button class="btn continue-btn">Continue</button>
+
+      <div class="signup-text">
+        Don’t have an account? <a href="#">Sign up</a>
+      </div>
+
+      <div class="terms">
+        <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
+      </div>
+    </div>
+
+    <script>
+      // Optional button click handling
+      document.querySelector(".btn-google").onclick = function () {
+        alert("Continue with Google clicked!");
+      };
+
+      document.querySelector(".btn-github").onclick = function () {
+        alert("Continue with GitHub clicked!");
+      };
+
+      document.querySelector(".continue-btn").onclick = function () {
+        const email = document.querySelector(".email-input").value;
+        if (email) {
+          alert(`Email entered: ${email}`);
+        } else {
+          alert("Please enter a valid email address.");
+        }
+      };
+    </script>
+  </body>
+</html>
